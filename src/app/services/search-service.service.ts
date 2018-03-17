@@ -4,14 +4,16 @@ import { HttpClient } from "@angular/common/http";
 import "rxjs/add/operator/map"
 
 import { Error } from "../models/error";
+import { Organization } from "../models/organization";
 
 @Injectable()
-export class SearchServiceService {
+export class SearchService {
 
   apiUrl: string = "http://kuda.gear.host/api/data/search/";
 
   error: Error;
   isSuccess: boolean = false;
+  organizations: Organization[] = [];
   
   constructor(public http: HttpClient) { }
 
@@ -20,5 +22,11 @@ export class SearchServiceService {
     .get(this.apiUrl + query)
     .map((data) => JSON.stringify(data));
   }
-  // name, description, image, website, phoneOne, phoneTwo, address
+
+  public search(query: string) {
+    this.sendRequiest(query).subscribe((data) => {
+      const response = JSON.parse(data);
+      console.log(response);
+    });
+  }
 }

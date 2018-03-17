@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { MatInputModule } from '@angular/material/input';
 
+import { SearchService } from '../../services/search-service.service';
+
 @Component({
   selector: 'search-input',
   templateUrl: './search-input.component.html',
@@ -12,7 +14,7 @@ export class SearchInputComponent implements OnInit {
   placeholder = 'Что вы хотите выбросить?';
   value = '';
 
-  constructor() { }
+  constructor(public searchService: SearchService) { }
 
   ngOnInit() {
   }
@@ -22,7 +24,7 @@ export class SearchInputComponent implements OnInit {
   }
 
   public search() {
-    console.log('pow');
+    this.searchService.search(this.value);
   }
 
   public onKeydown(event: any) {
