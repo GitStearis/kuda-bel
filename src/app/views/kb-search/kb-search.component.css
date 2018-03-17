@@ -19,3 +19,14 @@
     flex: 0 1 auto;
     align-self: auto;
 }
+
+.search-results-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color: aquamarine;
+}

@@ -1,8 +1,8 @@
 export interface Organization {
     name: string,
     description: string,
-    image: string,
-    website: string,
+    logoUrl: string,
+    siteUrl: string,
     phoneOne: string,
     phoneTwo: string,
     address: string

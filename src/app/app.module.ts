@@ -10,28 +10,34 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { KbSearchComponent } from './views/kb-search/kb-search.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ListItemComponent } from './components/list-item/list-item.component';
+import { ListComponent } from './components/list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchInputComponent,
     KbSearchComponent,
-    NavbarComponent
+    NavbarComponent,
+    ListItemComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     FormsModule,
     MatInputModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    HttpClientModule
+    MatListModule,
   ],
   providers: [
     SearchService

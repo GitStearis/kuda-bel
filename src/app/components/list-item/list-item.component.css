@@ -1,0 +1,7 @@
+.list-item {
+    width: 100%;
+    background-color: red;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: stretch;
+}

@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 
-import "rxjs/add/operator/map"
+import { Observable } from 'rxjs/Observable';
+import "rxjs/add/operator/map";
+import 'rxjs/add/observable/of';
 
 import { Error } from "../models/error";
 import { Organization } from "../models/organization";
@@ -11,9 +13,10 @@ export class SearchService {
 
   apiUrl: string = "https://kuda.gear.host/api/data/search/";
 
-  error: Error;
-  isSuccess: boolean = false;
-  organizations: Organization[] = [];
+  error: Observable<Error>;
+  organizations: Observable<Organization[]>;
+  description: Observable<string>;
+  isSuccess: Observable<boolean>;
   
   constructor(public http: HttpClient) { }
 
@@ -24,9 +27,27 @@ export class SearchService {
   }
 
   public search(query: string) {
-    this.sendRequiest(query).subscribe((data) => {
-      const response = JSON.parse(data);
-      console.log(response);
+    this.sendRequiest(query).subscribe((data) => this.checkResponse(JSON.parse(data)));
+  }
+
+  private checkResponse(response: any) {
+    this.isSuccess = response.success;
+    if (this.isSuccess) {
+      this.parseResponse(response);
+    }
+    this.saveError(response);
+  }
+
+  private parseResponse(response: any) {
+    console.log(response);
+    this.description = Observable.of(response.data.actionDescription);
+    this.organizations = Observable.of(response.data.organizations);
+  }
+
+  private saveError(response: any) {
+    this.error = Observable.of({
+      id: response.errorId,
+      description: response.errorDescription
     });
   }
 }

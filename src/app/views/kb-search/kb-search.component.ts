@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SearchService } from '../../services/search-service.service';
+
 @Component({
   selector: 'kb-search',
   templateUrl: './kb-search.component.html',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KbSearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(public searchService: SearchService) { }
 
   ngOnInit() {
   }
