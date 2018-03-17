@@ -9,7 +9,7 @@ import { Organization } from "../models/organization";
 @Injectable()
 export class SearchService {
 
-  apiUrl: string = "http://kuda.gear.host/api/data/search/";
+  apiUrl: string = "https://kuda.gear.host/api/data/search/";
 
   error: Error;
   isSuccess: boolean = false;
