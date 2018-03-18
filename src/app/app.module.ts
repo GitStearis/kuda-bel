@@ -11,6 +11,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatRadioModule } from '@angular/material/radio';
 
 import { AppComponent } from './app.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
@@ -19,6 +21,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { ListComponent } from './components/list/list.component';
 import { EventDescriptionComponent } from './components/event-description/event-description.component';
+import { SurveyComponent } from './components/survey/survey.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { EventDescriptionComponent } from './components/event-description/event-
     NavbarComponent,
     ListItemComponent,
     ListComponent,
-    EventDescriptionComponent
+    EventDescriptionComponent,
+    SurveyComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +44,8 @@ import { EventDescriptionComponent } from './components/event-description/event-
     MatIconModule,
     MatButtonModule,
     MatListModule,
+    MatStepperModule,
+    MatRadioModule
   ],
   providers: [
     SearchService
