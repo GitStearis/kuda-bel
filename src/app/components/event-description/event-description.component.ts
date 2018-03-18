@@ -7,8 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class EventDescriptionComponent implements OnInit {
 
-  @Input()
-  description: string;
+  @Input()  description: string;
+  
+  @Input()  requestedItemName: string;
 
   constructor() { }
 

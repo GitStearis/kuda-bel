@@ -8,7 +8,7 @@
 
 <div *ngIf="searchService.description">
     <div>
-        <event-description class="results-container" [description]="searchService.description | async">
+        <event-description class="results-container" [description]="searchService.description | async" [requestedItemName]="searchService.requestedItemName">
         </event-description>
     </div>
 

@@ -11,7 +11,10 @@ export class KbSearchComponent implements OnInit {
 
   constructor(public searchService: SearchService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+    localStorage.setItem('loading', '0');
+  }
 
   public loading(){
     return localStorage.getItem('loading') == '1' && !this.searchService.description;
