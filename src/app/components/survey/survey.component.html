@@ -1,0 +1,24 @@
+<mat-vertical-stepper class="survey" [linear]="isLinear">
+    <mat-step label="Шаг 1">
+        <h2>Выберите, пожалуйста, на что похож ваш мусор:</h2>
+        <mat-radio-group class="radio-group" [(ngModel)]="thrashType">
+            <mat-radio-button class="radio-button" *ngFor="let type of data" [value]="type.subMenuItem">
+                {{ type.name }}
+            </mat-radio-button>
+        </mat-radio-group>
+    </mat-step>
+    <mat-step label="Шаг 2" [stepControl]="!thrashType">
+        <h2>Выберите наиболее подходящий раздел:</h2>
+        <mat-radio-group class="radio-group" [(ngModel)]="thrashSubtype">
+            <mat-radio-button class="radio-button" *ngFor="let subtype of thrashType" [value]="subtype.actionId">
+                {{ subtype.name }}
+            </mat-radio-button>
+        </mat-radio-group>
+        <div class="button" (click)="confirm()">
+            <button mat-button matStepperNext type="button" (click)="getByActionId()">Далее</button>
+        </div>
+    </mat-step>
+    <mat-step label="Результат">
+        {{ event }}
+    </mat-step>
+</mat-vertical-stepper>
