@@ -1,6 +1,7 @@
 <form class="search-form">
     <mat-form-field class="search-input">
         <input matInput type="text" placeholder="{{ placeholder }}" [(ngModel)]="value" name="search" (keydown)="onKeydown($event)" />
+        <mat-hint align="start"><strong>например, "утюг"</strong> </mat-hint>
         <button mat-button *ngIf=" value " matSuffix mat-icon-button aria-label="Clear " (click)="clear() ">
             <mat-icon aria-label="Close ">close</mat-icon>
         </button>

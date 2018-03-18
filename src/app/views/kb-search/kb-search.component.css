@@ -10,10 +10,12 @@
 }
 
 .search-input {
-    width: 400px;
+    width: 25em;
     border: 2px solid #AAC34F;
-    padding: 1em 2em;
-    margin: 0em 2em;
+    padding-bottom: 1.5em;
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
     border-radius: 3em;
     order: 0;
     flex: 0 1 auto;

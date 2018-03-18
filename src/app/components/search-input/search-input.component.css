@@ -1,5 +1,5 @@
 .search-form {
-    max-width: 500px;
+    max-width: 25em;
     width: 100%;
     display: flex;
     flex-direction: row;
