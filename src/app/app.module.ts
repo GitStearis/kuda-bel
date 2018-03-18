@@ -18,6 +18,7 @@ import { KbSearchComponent } from './views/kb-search/kb-search.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { ListComponent } from './components/list/list.component';
+import { EventDescriptionComponent } from './components/event-description/event-description.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ListComponent } from './components/list/list.component';
     KbSearchComponent,
     NavbarComponent,
     ListItemComponent,
-    ListComponent
+    ListComponent,
+    EventDescriptionComponent
   ],
   imports: [
     BrowserModule,

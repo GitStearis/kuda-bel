@@ -10,7 +10,6 @@
     align-content: flex-start;
     align-items: center;
     background-color: #F4F4F4;
-    padding: 0.5em;
     margin-bottom: 1em;
 }
 
@@ -52,8 +51,11 @@
 }
 
 .information h3 {
+    font-family: 'Ubuntu';
     font-weight: 700;
     font-style: normal;
+    font-size: 1.2em;
+    text-indent: 0.5em;
     margin: 1em 1em 1em;
 }
 
@@ -80,6 +82,9 @@
 }
 
 @media only screen and (max-width: 800px) {
+    .list-item {
+        font-size: 0.8em;
+    }
     .image-container {
         width: 100%;
     }

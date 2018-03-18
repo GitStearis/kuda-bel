@@ -20,7 +20,7 @@
     align-self: auto;
 }
 
-.search-results-container {
+.results-container {
     width: 100%;
     display: flex;
     flex-direction: column;

@@ -7,7 +7,8 @@
 </section>
 
 <section>
-    <list class="search-results-container" [organizations]="searchService.organizations | async">
-
+    <event-description class="results-container" [description]="searchService.description | async">
+    </event-description>
+    <list class="results-container" [organizations]="searchService.organizations | async">
     </list>
 </section>
