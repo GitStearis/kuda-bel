@@ -6,7 +6,7 @@
     </div>
 </section>
 
-<section *ngIf="searchService.description | async">
+<section *ngIf="searchService.description">
     <event-description class="results-container" [description]="searchService.description | async">
     </event-description>
 </section>
