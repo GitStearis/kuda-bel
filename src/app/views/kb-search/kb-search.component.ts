@@ -13,4 +13,15 @@ export class KbSearchComponent implements OnInit {
 
   ngOnInit() {}
 
+  public loading(){
+    return localStorage.getItem('loading') == '1' && !this.searchService.description;
+  }
+
+  public noResults(){
+    return  this.searchService.error && localStorage.getItem('loading') != '1';
+  }
+
+  public needMoreInformation(){
+    return false;
+  }
 }

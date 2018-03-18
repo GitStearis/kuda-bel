@@ -6,19 +6,31 @@
     </div>
 </section>
 
-<section>
+<div *ngIf="searchService.description">
     <div>
         <event-description class="results-container" [description]="searchService.description | async">
         </event-description>
     </div>
-</section>
 
-<section>
     <div>
         <list class="results-container" [organizations]="searchService.organizations | async">
         </list>
     </div>
-</section>
+</div>
+<div style="text-align: center;">
+    <div *ngIf="loading()">
+            Ищем...
+    </div>
+    
+    <div *ngIf="searchService.error">
+        <div *ngIf="searchService.error.id == 3 && !loading()">
+            Ничего не найдено :(
+        </div>
+        <div *ngIf="searchService.error.id == 2 && !loading()">
+            Нужно больше информации...
+        </div>
+    </div>
+</div>
 
 <!--<section class="results-container">
     <survey>

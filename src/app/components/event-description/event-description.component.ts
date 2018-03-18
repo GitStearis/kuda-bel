@@ -13,10 +13,4 @@ export class EventDescriptionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {}
-
-  public loading(){
-    console.log(localStorage.getItem('loading'));
-    return localStorage.getItem('loading') == '1';
-  }
-
 }
