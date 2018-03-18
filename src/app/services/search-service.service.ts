@@ -11,7 +11,7 @@ import { Organization } from "../models/organization";
 @Injectable()
 export class SearchService {
 
-  apiUrl: string = "https://kuda.gear.host/api/data/search/";
+  apiUrl: string = "http://kuda-bel.azurewebsites.net/api/data/search/";
 
   error: Observable<Error>;
   organizations: Observable<Organization[]>;

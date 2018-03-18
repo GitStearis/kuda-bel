@@ -11,7 +11,6 @@ export class KbSearchComponent implements OnInit {
 
   constructor(public searchService: SearchService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
