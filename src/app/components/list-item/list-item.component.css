@@ -1,7 +1,95 @@
 .list-item {
     width: 100%;
-    background-color: red;
     order: 0;
     flex: 0 1 auto;
-    align-self: stretch;
+    align-self: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: center;
+    background-color: #F4F4F4;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
+.image-container {
+    width: 20%;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.image-container a {
+    text-decoration: none;
+}
+
+.image-container a:visited {
+    text-decoration: none;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+}
+
+.information {
+    width: 80%;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.information h3 {
+    font-weight: 700;
+    font-style: normal;
+    margin: 1em 1em 1em;
+}
+
+.information a {
+    color: #6FB488;
+    text-decoration: underline;
+}
+
+.information p {
+    font-weight: 400;
+    line-height: 1.5em;
+    text-indent: 0.5em;
+    text-align: justify;
+    margin: 1em 1em 1em;
+}
+
+.information p a {
+    margin-right: 0.5em;
+}
+
+.icon {
+    color: #6FB488;
+    margin-right: 0.5em;
+}
+
+@media only screen and (max-width: 800px) {
+    .image-container {
+        width: 100%;
+    }
+    .image {
+        max-width: 128px;
+    }
+    .information {
+        width: 100%
+    }
+    .information a {
+        text-align: center;
+    }
 }

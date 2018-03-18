@@ -1,9 +1,22 @@
-<mat-list-item class="list-item">
-    <img matListAvatar src="{{ organization.logoUrl }}" alt="{{ organization.name }}">
-    <h3 matLine>{{ organization.name }}</h3>
-    <p matLine>{{ organization.description }}</p>
-    <p matLine>
-        <span>{{ organization.phoneOne }}</span>
-        <span>{{ organization.phoneTwo }}</span>
-    </p>
-</mat-list-item>
+<div class="list-item">
+    <div class="image-container">
+        <a href="{{ organization.siteUrl }}">
+            <img class="image" src="{{ organization.logoUrl }}" alt="{{ organization.name }}">
+        </a>
+    </div>
+    <div class="information">
+        <a href="{{ organization.siteUrl }}">
+            <h3>{{ organization.name }}</h3>
+        </a>
+        <p>{{ organization.description }}</p>
+        <p *ngIf="organization.address">
+            <mat-icon class="icon" aria-label="Address">map</mat-icon>
+            {{ organization.address }}
+        </p>
+        <p *ngIf="organization.phoneOne">
+            <mat-icon class="icon" aria-label="Search">phone</mat-icon>
+            <a href="tel:{{ organization.phoneOne }}"><span>{{ organization.phoneOne }}</span></a>
+            <a href="tel:{{ organization.phoneTwo }}"><span>({{ organization.phoneTwo }})</span></a>
+        </p>
+    </div>
+</div>
