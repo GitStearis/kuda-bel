@@ -1,7 +1,8 @@
 <div class="list-item">
     <div class="image-container">
         <a href="{{ organization.siteUrl }}">
-            <img class="image" src="{{ organization.logoUrl }}" alt="{{ organization.name }}">
+            <img *ngIf="organization.logoUrl" class="image" src="{{ organization.logoUrl }}" alt="{{ organization.name }}">
+            <img *ngIf="!organization.logoUrl" class="image" src="assets/logo.png" alt="{{ organization.name }}">
         </a>
     </div>
     <div class="information">
@@ -16,7 +17,7 @@
         <p *ngIf="organization.phoneOne">
             <mat-icon class="icon" aria-label="Search">phone</mat-icon>
             <a href="tel:{{ organization.phoneOne }}"><span>{{ organization.phoneOne }}</span></a>
-            <a href="tel:{{ organization.phoneTwo }}"><span>({{ organization.phoneTwo }})</span></a>
+            <a *ngIf="organization.phoneTwo" href="tel:{{ organization.phoneTwo }}"><span>({{ organization.phoneTwo }})</span></a>
         </p>
     </div>
 </div>

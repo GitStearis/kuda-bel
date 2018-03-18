@@ -6,12 +6,16 @@
     </div>
 </section>
 
-<section *ngIf="searchService.description">
-    <event-description class="results-container" [description]="searchService.description | async">
-    </event-description>
+<section>
+    <div>
+        <event-description class="results-container" [description]="searchService.description | async">
+        </event-description>
+    </div>
 </section>
 
-<section *ngIf="searchService.isSuccess | async">
-    <list class="results-container" [organizations]="searchService.organizations | async">
-    </list>
+<section>
+    <div>
+        <list class="results-container" [organizations]="searchService.organizations | async">
+        </list>
+    </div>
 </section>

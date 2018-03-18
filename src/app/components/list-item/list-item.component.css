@@ -35,8 +35,9 @@
 }
 
 .image {
-    width: 100%;
-    height: auto;
+    margin: 1em;
+    width: auto;
+    height: 8em;
     order: 0;
     flex: 0 1 auto;
     align-self: auto;
@@ -87,9 +88,11 @@
     }
     .image-container {
         width: 100%;
+        margin-top: 1em;
     }
     .image {
-        max-width: 128px;
+        height: 128px;
+        width: auto;
     }
     .information {
         width: 100%
