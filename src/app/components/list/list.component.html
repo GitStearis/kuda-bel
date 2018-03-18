@@ -1,4 +1,6 @@
-<div class="list" *ngFor="let organization of organizations">
-    <list-item [organization]="organization">
-    </list-item>
+<div  *ngIf="organizations">
+    <div class="list" *ngFor="let organization of organizations">
+        <list-item [organization]="organization">
+        </list-item>
+    </div>
 </div>

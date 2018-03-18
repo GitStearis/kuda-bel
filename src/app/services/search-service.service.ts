@@ -11,7 +11,7 @@ import { Organization } from "../models/organization";
 @Injectable()
 export class SearchService {
 
-  apiUrl: string = "http://kuda-bel.azurewebsites.net/api/data/search/";
+  apiUrl: string = "http://localhost:8053//api/data/search/";
 
   error: Observable<Error>;
   organizations: Observable<Organization[]>;
@@ -21,6 +21,7 @@ export class SearchService {
   constructor(public http: HttpClient) { }
 
   public sendRequiest(query: string) {
+    localStorage.setItem('loading', '1');
     return this.http
     .get(this.apiUrl + query)
     .map((data) => JSON.stringify(data));
@@ -31,17 +32,16 @@ export class SearchService {
   }
 
   private checkResponse(response: any) {
-    this.isSuccess = response.success;
-    if (this.isSuccess) {
-      this.parseResponse(response);
-    }
-    this.saveError(response);
-  }
-
-  private parseResponse(response: any) {
+    localStorage.setItem('loading', '0');
     console.log(response);
-    this.description = Observable.of(response.data.actionDescription);
-    this.organizations = Observable.of(response.data.organizations);
+    if(response.success){
+      this.description = Observable.of(response.data.actionDescription);
+      this.organizations = Observable.of(response.data.organizations);
+    } else {
+      this.description = null;
+      this.organizations = null;
+      this.saveError(response);
+    }
   }
 
   private saveError(response: any) {

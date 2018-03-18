@@ -20,18 +20,13 @@ export class SearchInputComponent implements OnInit {
   ngOnInit() {
   }
 
-  public clear() {
-    this.value = '';
-  }
-
   public search() {
     this.searchService.search(this.value);
   }
 
-  public onKeydown(event: any) {
+  public onKeyUp(event: any) {
     if (event.key === "Enter" || this.value.length >= 3) {
       this.search();
     }
   }
-
 }
