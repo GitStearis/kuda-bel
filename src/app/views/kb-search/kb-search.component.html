@@ -1,39 +1,42 @@
 <navbar></navbar>
-
-<section class="search-input-container">
-    <div class="search-input">
-        <search-input></search-input>
+<div class="search-component">
+    
+    <section class="search-input-container">
+        <div class="search-input">
+            <search-input></search-input>
+        </div>
+    </section>
+    
+    <div *ngIf="searchService.description">
+        <div>
+            <event-description class="results-container" [description]="searchService.description | async" [requestedItemName]="searchService.requestedItemName">
+            </event-description>
+        </div>
+    
+        <div>
+            <list class="results-container" [organizations]="searchService.organizations | async">
+            </list>
+        </div>
     </div>
-</section>
-
-<div *ngIf="searchService.description">
-    <div>
-        <event-description class="results-container" [description]="searchService.description | async" [requestedItemName]="searchService.requestedItemName">
-        </event-description>
-    </div>
-
-    <div>
-        <list class="results-container" [organizations]="searchService.organizations | async">
-        </list>
-    </div>
-</div>
-<div style="text-align: center;">
-    <div *ngIf="loading()">
-            Ищем...
+    <div style="text-align: center;">
+        <div *ngIf="loading()">
+                Ищем...
+        </div>
+        
+        <div *ngIf="searchService.error">
+            <div *ngIf="searchService.error.id == 3 && !loading()">
+                Ничего не найдено :(
+            </div>
+            <div *ngIf="searchService.error.id == 2 && !loading()">
+                Нужно больше информации...<br/><br/>
+                Возможно вы имели ввиду: <i style="font-style: italic !important">{{searchService.error.data}}</i>
+            </div>
+        </div>
     </div>
     
-    <div *ngIf="searchService.error">
-        <div *ngIf="searchService.error.id == 3 && !loading()">
-            Ничего не найдено :(
-        </div>
-        <div *ngIf="searchService.error.id == 2 && !loading()">
-            Нужно больше информации...
-        </div>
-    </div>
+    <!--<section class="results-container">
+        <survey>
+    
+        </survey>
+    </section> -->
 </div>
-
-<!--<section class="results-container">
-    <survey>
-
-    </survey>
-</section> -->

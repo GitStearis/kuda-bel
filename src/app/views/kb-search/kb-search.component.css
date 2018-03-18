@@ -9,6 +9,11 @@
     align-items: center;
 }
 
+.search-component{
+    
+    font-family: 'Roboto', Arial, Helvetica, sans-serif !important;
+}
+
 .search-input {
     width: 25em;
     border: 2px solid #AAC34F;

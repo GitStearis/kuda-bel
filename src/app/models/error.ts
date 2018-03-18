@@ -1,4 +1,5 @@
 export interface Error {
     id: number,
-    description?: string
+    description?: string,
+    data: string
 }

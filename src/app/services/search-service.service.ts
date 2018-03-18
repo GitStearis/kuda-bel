@@ -52,7 +52,12 @@ export class SearchService {
   private setError(response: any) {
     this.error = {
       id: response.errorId,
-      description: response.errorDescription
+      description: response.errorDescription,
+      data: ''
     };
+    
+    for (let i = 0; i < response.data.length; i++) {
+      this.error.data += '; ' + response.data[i].name;
+    }
   }
 }
